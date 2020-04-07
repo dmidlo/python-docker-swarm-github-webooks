@@ -11,7 +11,9 @@ def api_root():
 @app.route('/github', methods=['POST'])
 def api_gh_wildcard():
   if request.headers['Content-Type'] == 'application/json':
-    return json.dumps(request.json)
+    result = json.dumps(request.json)
+    print(result)
+    return result
 
 if __name__== '__main__':
   app.run(debug=True, host='0.0.0.0')
